@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://clubmillionera-001-site1.ltempurl.com/api/:path*"
+    }
+  ]
+}
+

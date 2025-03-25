@@ -67,6 +67,6 @@ npm run dev
 ```
 
 ## Превью
-![](./screenshots/1.png)
-![](./screenshots/2.png)
-![](./screenshots/3.png)
+![1](./screenshots/1.png)
+![2](./screenshots/2.png)
+![3](./screenshots/3.png)

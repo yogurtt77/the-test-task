@@ -238,15 +238,9 @@
   position: relative;
   transition: all 0.3s ease;
   cursor: pointer;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); // Добавлена тень
-
-  &:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); // Усилена тень при наведении
-  }
 
   &.featured {
-    background-color: rgba(92, 95, 126, 0.85);
+    background-color: rgba(42, 50, 75, 0.702);
     color: white;
   }
 }

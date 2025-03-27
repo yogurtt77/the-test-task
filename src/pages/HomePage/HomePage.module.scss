@@ -7,47 +7,54 @@
 
 // Hero Section
 .hero {
-  padding: 3rem 1rem 5rem;
+  padding: 50px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+  background-color: #f7f9fc;
 }
 
 .heroTitle {
-  font-size: 2rem;
+  font-size: 25px;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 3rem;
-  max-width: 800px;
+  margin-bottom: 70px;
 }
 
 .services {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
-  width: 100%;
-  max-width: 1200px;
+  gap: 22px;
+}
+@media (max-width: 1200px) {
+  .services {
+    gap: 64px; /* Новый gap для мобилок */
+  }
 }
 
+// Изменим стили для иконок, чтобы они выступали над карточками
 .serviceCard {
   background-color: white;
   border-radius: 0.5rem;
   padding: 1.5rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  width: 100%;
-  max-width: 350px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  // Более заметная тень
+  // width: 100%;
+  max-width: 370px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  transition: transform 0.3s ease-in-out;
+  position: relative;
+  padding-top: 2.9375rem; // Увеличиваем верхний отступ, чтобы освободить место для иконки
+  transition: all 0.3s ease;
 }
 
-.serviceCard:hover{
+.serviceCard:hover {
   transform: translateY(-10px);
-
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .serviceIconWrapper {
@@ -55,32 +62,38 @@
   justify-content: center;
   width: 100%;
   margin-bottom: 1rem;
+  position: absolute;
+  top: -40px; // Смещаем иконку вверх, чтобы она выступала над карточкой
 }
 
 .serviceIcon {
-  background-color: #a5a6f6;
+  background-color: #7b93ff;
   width: 60px;
   height: 60px;
-  border-radius: 0.75rem;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   font-size: 1.75rem;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+  // Добавлена тень для иконки
 }
 
 .serviceTitle {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
 }
 
 .serviceDescription {
-  font-size: 0.9rem;
-  color: #666;
+  font-size: 14px;
+  font-weight: 400;
+  color: #000000;
   flex-grow: 1;
-  margin-bottom: 1.5rem;
-  line-height: 1.5;
+  margin-bottom: 22px;
+  margin-left: 11px;
+  margin-right: 11px;
 }
 
 .serviceFooter {
@@ -94,30 +107,27 @@
 .rating {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
-  color: #666;
-  font-size: 0.9rem;
-}
-
-.starIcon {
-  color: #ffc107;
+  gap: 5px;
+  color: #9da5b9;
+  font-size: 14px;
 }
 
 .tag {
-  background-color: #f0f0f0;
-  padding: 0.25rem 0.75rem;
-  border-radius: 1rem;
-  font-size: 0.8rem;
-  color: #666;
+  background-color: #e1e5ee;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #000000;
 }
 
 // Portfolio Section
 .portfolio {
-  padding: 3rem 1rem 5rem;
+  padding: 40px 0px 60px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f9f9f9;
+  background-color: #fff;
   width: 100%;
 }
 
@@ -125,53 +135,68 @@
   font-size: 2rem;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 30px;
 }
 
 .sectionSubtitle {
   font-size: 1rem;
-  color: #666;
+  color: black;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 30px;
+  font-weight: 400;
 }
 
 .portfolioNav {
   display: flex;
-  gap: 2rem;
-  margin-bottom: 2.5rem;
-  border-bottom: 1px solid #eee;
+  gap: 35px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid #e1e5ee;
   padding-bottom: 0.5rem;
   width: 100%;
-  max-width: 600px;
+  max-width: 1115px;
   justify-content: center;
+  overflow-x: auto; /* Позволяет скроллить, если не помещается */
+  white-space: nowrap; /* Запрещает перенос элементов */
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.portfolioNav::-webkit-scrollbar {
+  display: none; /* Убираем скроллбар для WebKit-браузеров */
+}
+
+@media (max-width: 768px) {
+  .portfolioNav {
+    justify-content: flex-start;
+  }
 }
 
 .navButton {
   background: none;
   border: none;
   padding: 0.5rem 0;
-  font-size: 1rem;
-  color: #666;
+  font-size: 16px;
+  font-weight: 700;
+  color: #9da5b9;
   cursor: pointer;
   position: relative;
   transition: color 0.3s ease;
 
   &:hover {
-    color: #333;
+    color: #4a6fff;
   }
 
   &.active {
-    color: #4a4a8f;
-    font-weight: 500;
+    color: #4a6fff;
 
     &::after {
-      content: '';
+      content: "";
       position: absolute;
       bottom: -0.5rem;
       left: 0;
       width: 100%;
       height: 2px;
-      background-color: #4a4a8f;
+      background-color: #4a6fff;
     }
   }
 }
@@ -179,43 +204,50 @@
 .projects {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 1.5rem;
+  gap: 1.25rem;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1463px;
+  padding: 0 153px;
 
-  @media (min-width: 768px) {
+  @media (max-width: 1200px) {
+    padding: 0 50px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0 20px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  @media (min-width: 768px) and (max-width: 1200px) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1200px) {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 .projectCard {
-  background-color: #e9ecef;
+  background-color: #e1e5ee;
   border-radius: 0.5rem;
   overflow: hidden;
-  height: 220px;
+  height: 262px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   transition: all 0.3s ease;
   cursor: pointer;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); // Добавлена тень
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); // Усилена тень при наведении
   }
 
   &.featured {
     background-color: rgba(92, 95, 126, 0.85);
     color: white;
-  }
-  
-  &.bordered {
-    border: 2px solid #a5a6f6;
   }
 }
 
@@ -227,40 +259,69 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative; // Добавлено для позиционирования hoverContent
 }
 
 .projectTitle {
-  font-size: 1.25rem;
-  font-weight: 500;
-  margin-bottom: 0.5rem;
-  color: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #9da5b9;
+  transition: opacity 0.3s ease;
+
+  .featured & {
+    opacity: 0.5; // Полупрозрачный в состоянии наведения
+  }
+}
+
+// Новый стиль для контента, который появляется при наведении
+.hoverContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; // Распределяем элементы по вертикали
+  padding: 65px 0px; // Такой же padding как у projectContent
+  z-index: 2; // Выше, чем у заголовка
+}
+
+// Стиль для дублирующегося заголовка при наведении
+.projectTitleHover {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: white;
+  text-align: center;
 }
 
 .projectTagWrapper {
-  margin-top: 0.5rem;
-  margin-bottom: auto;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .projectTag {
   display: inline-block;
-  padding: 0.25rem 0.75rem;
-  border-radius: 1rem;
-  font-size: 0.8rem;
-  color: #ffd700;
-  background: none;
+  font-size: 0.875rem;
+  color: #ffd166;
 }
 
 .buttonWrapper {
   margin-top: auto;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .detailsButton {
-  background-color: #4e54ff;
+  background-color: #4a6fff;
   color: white;
   border: none;
-  padding: 0.5rem 1.5rem;
+  padding: 6px 8px;
   border-radius: 0.25rem;
-  font-size: 0.9rem;
+  font-size: 0.875rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 
@@ -271,10 +332,30 @@
 
 // Footer
 .footer {
-  background-color: #2b2d42;
+  background-color: #2a324b;
   color: white;
-  padding: 1rem;
+  padding: 0;
   text-align: center;
   margin-top: auto;
-}
+  height: 50px; // Точная высота из изображения
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 300;
 
+  p {
+    max-width: 1463px; // Точная ширина из изображения
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 153px; // Добавлены отступы по бокам как в шапке
+
+    @media (max-width: 1200px) {
+      padding: 0 50px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 0 20px;
+    }
+  }
+}

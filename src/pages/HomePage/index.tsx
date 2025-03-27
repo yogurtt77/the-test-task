@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import { type FC, useState } from "react"
-import s from "./HomePage.module.scss"
-import { Star } from "lucide-react"
+import { type FC, useState } from "react";
+import s from "./HomePage.module.scss";
+import { Star } from "lucide-react";
 
 interface ProjectData {
-  id: number
-  title: string
-  tag: string
+  id: number;
+  title: string;
+  tag: string;
 }
 
 export const HomePage: FC = () => {
-  const [hoveredProject, setHoveredProject] = useState<number | null>(null)
+  const [hoveredProject, setHoveredProject] = useState<number | null>(null);
 
   const projects: ProjectData[] = [
     { id: 1, title: "Корпоративный сайт", tag: "Веб-разработка" },
@@ -20,13 +20,15 @@ export const HomePage: FC = () => {
     { id: 4, title: "CRM система", tag: "Бизнес-решение" },
     { id: 5, title: "Дизайн интерфейса", tag: "UI/UX" },
     { id: 6, title: "Маркетинговая кампания", tag: "Брендинг" },
-  ]
+  ];
 
   return (
     <div className={s.wrap}>
       {/* Hero Section */}
       <section className={s.hero}>
-        <h1 className={s.heroTitle}>Инновационные решения для вашего бизнеса</h1>
+        <h1 className={s.heroTitle}>
+          Инновационные решения для вашего бизнеса
+        </h1>
 
         <div className={s.services}>
           <div className={s.serviceCard}>
@@ -37,12 +39,12 @@ export const HomePage: FC = () => {
             </div>
             <h3 className={s.serviceTitle}>Креативный дизайн</h3>
             <p className={s.serviceDescription}>
-              Мы создаем уникальные дизайны, которые отражают индивидуальность вашего бренда и привлекают внимание
-              целевой аудитории.
+              Мы создаем уникальные дизайны, которые отражают индивидуальность
+              вашего бренда и привлекают внимание целевой аудитории.
             </p>
             <div className={s.serviceFooter}>
               <div className={s.rating}>
-                <Star size={16} className={s.starIcon} />
+                <Star size={16} className={s.starIcon} fill="#9DA5B9" />
                 <span>4.9</span>
               </div>
               <span className={s.tag}>Дизайн</span>
@@ -57,11 +59,12 @@ export const HomePage: FC = () => {
             </div>
             <h3 className={s.serviceTitle}>Быстрая разработка</h3>
             <p className={s.serviceDescription}>
-              Оптимизированный процесс разработки позволяет нам создавать высококачественные продукты в сжатые сроки.
+              Оптимизированный процесс разработки позволяет нам создавать
+              высококачественные продукты в сжатые сроки.
             </p>
             <div className={s.serviceFooter}>
               <div className={s.rating}>
-                <Star size={16} className={s.starIcon} />
+                <Star size={16} className={s.starIcon} fill="#9DA5B9" />
                 <span>4.8</span>
               </div>
               <span className={s.tag}>Разработка</span>
@@ -76,12 +79,12 @@ export const HomePage: FC = () => {
             </div>
             <h3 className={s.serviceTitle}>Мобильная оптимизация</h3>
             <p className={s.serviceDescription}>
-              Все наши проекты адаптированы для любых устройств, обеспечивая идеальный пользовательский опыт на любом
-              экране.
+              Все наши проекты адаптированы для любых устройств, обеспечивая
+              идеальный пользовательский опыт на любом экране.
             </p>
             <div className={s.serviceFooter}>
               <div className={s.rating}>
-                <Star size={16} className={s.starIcon} />
+                <Star size={16} className={s.starIcon} fill="#9DA5B9" />
                 <span>4.7</span>
               </div>
               <span className={s.tag}>Оптимизация</span>
@@ -93,7 +96,9 @@ export const HomePage: FC = () => {
       {/* Portfolio Section */}
       <section className={s.portfolio}>
         <h2 className={s.sectionTitle}>Наши работы</h2>
-        <p className={s.sectionSubtitle}>Ознакомьтесь с нашими лучшими проектами в различных категориях</p>
+        <p className={s.sectionSubtitle}>
+          Ознакомьтесь с нашими лучшими проектами в различных категориях
+        </p>
 
         <div className={s.portfolioNav}>
           <button className={`${s.navButton} ${s.active}`}>Главная</button>
@@ -107,23 +112,31 @@ export const HomePage: FC = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              className={`${s.projectCard} ${hoveredProject === project.id ? s.featured : ""} ${project.id === 6 ? s.bordered : ""}`}
+              className={`${s.projectCard} ${
+                hoveredProject === project.id ? s.featured : ""
+              } ${project.id === 6 ? s.bordered : ""}`}
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
             >
               <div className={s.projectContent}>
-                {hoveredProject === project.id ? (
-                  <>
-                    <h3 className={s.projectTitle}>{project.title}</h3>
+                {/* Этот заголовок всегда виден (фоновый) */}
+                <h3 className={s.projectTitle}>{project.title}</h3>
+
+                {hoveredProject === project.id && (
+                  <div className={s.hoverContent}>
+                    {/* Дублирующийся заголовок на переднем плане */}
+                    <h3 className={s.projectTitleHover}>{project.title}</h3>
+
+                    {/* Тег в середине */}
                     <div className={s.projectTagWrapper}>
                       <span className={s.projectTag}>{project.tag}</span>
                     </div>
+
+                    {/* Кнопка внизу */}
                     <div className={s.buttonWrapper}>
                       <button className={s.detailsButton}>Подробнее</button>
                     </div>
-                  </>
-                ) : (
-                  <h3 className={s.projectTitle}>{project.title}</h3>
+                  </div>
                 )}
               </div>
             </div>
@@ -136,6 +149,5 @@ export const HomePage: FC = () => {
         <p>© 2025 TheRPC. All rights reserved.</p>
       </footer>
     </div>
-  )
-}
-
+  );
+};

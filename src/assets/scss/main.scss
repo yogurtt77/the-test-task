@@ -2,12 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  border: 1px solid red;
 }
 
 body {
-  font-family: 'Inter', 'Onest', sans-serif;
-  color: #333;
-  line-height: 1.6;
+  font-family: "Inter";
   background-color: #fff;
 }
 
@@ -26,11 +25,6 @@ img {
   height: auto;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  line-height: 1.2;
-}
-
 .container {
   width: 100%;
   max-width: 1200px;
@@ -43,4 +37,3 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 14px;
   }
 }
-

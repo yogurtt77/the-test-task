@@ -34,21 +34,18 @@
   }
 }
 
-// Изменим стили для иконок, чтобы они выступали над карточками
 .serviceCard {
   background-color: white;
-  border-radius: 0.5rem;
-  padding: 1.5rem;
+  border-radius: 8px;
+  padding: 24px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  // Более заметная тень
-  // width: 100%;
   max-width: 370px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   position: relative;
-  padding-top: 2.9375rem; // Увеличиваем верхний отступ, чтобы освободить место для иконки
+  padding-top: 47px;
   transition: all 0.3s ease;
 }
 
@@ -61,9 +58,9 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
   position: absolute;
-  top: -40px; // Смещаем иконку вверх, чтобы она выступала над карточкой
+  top: -40px;
 }
 
 .serviceIcon {
@@ -132,14 +129,14 @@
 }
 
 .sectionTitle {
-  font-size: 2rem;
+  font-size: 32px;
   font-weight: 700;
   text-align: center;
   margin-bottom: 30px;
 }
 
 .sectionSubtitle {
-  font-size: 1rem;
+  font-size: 16px;
   color: black;
   text-align: center;
   margin-bottom: 30px;
@@ -151,18 +148,18 @@
   gap: 35px;
   margin-bottom: 32px;
   border-bottom: 1px solid #e1e5ee;
-  padding-bottom: 0.5rem;
+  padding-bottom: 8px;
   width: 100%;
   max-width: 1115px;
   justify-content: center;
   overflow-x: auto; /* Позволяет скроллить, если не помещается */
-  white-space: nowrap; /* Запрещает перенос элементов */
+  white-space: nowrap;
   padding-left: 20px;
   padding-right: 20px;
 }
 
 .portfolioNav::-webkit-scrollbar {
-  display: none; /* Убираем скроллбар для WebKit-браузеров */
+  display: none;
 }
 
 @media (max-width: 768px) {
@@ -174,7 +171,7 @@
 .navButton {
   background: none;
   border: none;
-  padding: 0.5rem 0;
+  padding: 8px 0;
   font-size: 16px;
   font-weight: 700;
   color: #9da5b9;
@@ -204,7 +201,7 @@
 .projects {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 1.25rem;
+  gap: 20px;
   width: 100%;
   max-width: 1463px;
   padding: 0 153px;
@@ -229,7 +226,7 @@
 
 .projectCard {
   background-color: #e1e5ee;
-  border-radius: 0.5rem;
+  border-radius: 8px;
   overflow: hidden;
   height: 262px;
   display: flex;
@@ -246,24 +243,24 @@
 }
 
 .projectContent {
-  padding: 1.5rem;
+  padding: 24px;
   text-align: center;
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  position: relative; // Добавлено для позиционирования hoverContent
+  position: relative;
 }
 
 .projectTitle {
-  font-size: 1rem;
+  font-size: 16px;
   font-weight: 700;
   color: #9da5b9;
   transition: opacity 0.3s ease;
 
   .featured & {
-    opacity: 0.5; // Полупрозрачный в состоянии наведения
+    opacity: 0.5;
   }
 }
 
@@ -276,14 +273,13 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; // Распределяем элементы по вертикали
-  padding: 65px 0px; // Такой же padding как у projectContent
-  z-index: 2; // Выше, чем у заголовка
+  justify-content: space-between;
+  padding: 65px 0px;
+  z-index: 2;
 }
 
-// Стиль для дублирующегося заголовка при наведении
 .projectTitleHover {
-  font-size: 1.125rem;
+  font-size: 18px;
   font-weight: 700;
   color: white;
   text-align: center;
@@ -298,7 +294,7 @@
 
 .projectTag {
   display: inline-block;
-  font-size: 0.875rem;
+  font-size: 14px;
   color: #ffd166;
 }
 
@@ -314,8 +310,8 @@
   color: white;
   border: none;
   padding: 6px 8px;
-  border-radius: 0.25rem;
-  font-size: 0.875rem;
+  border-radius: 4px;
+  font-size: 14px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 
@@ -331,7 +327,7 @@
   padding: 0;
   text-align: center;
   margin-top: auto;
-  height: 50px; // Точная высота из изображения
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -339,10 +335,10 @@
   font-weight: 300;
 
   p {
-    max-width: 1463px; // Точная ширина из изображения
+    max-width: 1463px;
     width: 100%;
     margin: 0 auto;
-    padding: 0 153px; // Добавлены отступы по бокам как в шапке
+    padding: 0 153px;
 
     @media (max-width: 1200px) {
       padding: 0 50px;

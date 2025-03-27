@@ -17,18 +17,18 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  height: 50px; // Точная высота из изображения
+  height: 50px;
 }
 
 .headerContent {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1463px; // Точная ширина из изображения
+  max-width: 1463px;
   margin: 0 auto;
   width: 100%;
   height: 100%;
-  padding: 0 153px; // Точные отступы по бокам 153px
+  padding: 0 153px;
 }
 
 .logo {
